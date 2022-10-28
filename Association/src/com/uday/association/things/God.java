@@ -4,7 +4,7 @@ public class God {
 	public String name;
 	public String gender;
 	public String mainPower;
-	public Weapon weapon =new Weapon("gadhe", "kills", 2);
+	public Weapon weapon = new Weapon("gadhe", "kills", 2);
 
 	public God(String name, String gender, String mainPower) {
 		this.name = name;

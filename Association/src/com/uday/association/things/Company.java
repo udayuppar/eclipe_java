@@ -11,8 +11,8 @@ public class Company {
 	}
 
 	public void showOff() {
-		System.out.println("Company name" + name);
-		System.out.println("Company type" + type);
+		System.out.println("Company name :" + name);
+		System.out.println("Company type :" + type);
 	}
 
 }

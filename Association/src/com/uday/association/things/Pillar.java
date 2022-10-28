@@ -9,7 +9,7 @@ public class Pillar {
 	public boolean supporting;
 	public Company company = new Company("Metro", "Box");
 
-	public Pillar(int id, String place, float height,String shape, boolean supporting) {
+	public Pillar(int id, String place, float height, String shape, boolean supporting) {
 		this.id = id;
 		this.place = place;
 		this.height = height;
@@ -32,7 +32,7 @@ public class Pillar {
 		} else {
 			System.out.println("invoking exist");
 		}
-		System.out.println("company name:" +company.name);
-		System.out.println("type:"+company.type);
+		System.out.println("--------company detailse-------------");
+		company.showOff();
 	}
 }
