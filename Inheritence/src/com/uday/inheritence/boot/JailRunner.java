@@ -7,6 +7,13 @@ import com.uday.inheritence.things.Jail;
 public class JailRunner {
 
 	public static void main(String[] args) {
+		
+		Juvenile  juve=new Juvenile();
+		System.out.println(juve.jailarName);
+		System.out.println(juve.noOfOfficers);
+		System.out.println(juve.jailName);
+		System.out.println(juve.location);
+		System.out.println(System.lineSeparator());
 		 
 		Jail jail=new Jail();
 		System.out.println(jail.jailName);
