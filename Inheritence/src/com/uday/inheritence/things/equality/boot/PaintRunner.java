@@ -32,13 +32,13 @@ public class PaintRunner {
 		
 		 boolean same=paint.equals(paint2);
 		 System.out.println(same);
-		 paint=paint2;
-		 System.out.println(paint==paint2);
+		// paint=paint2;
+		 // System.out.println(paint==paint2);
 		 System.out.println("************************************************************");
 		 
 		 Vehicle vehicle=new Vehicle();
 		 vehicle.setName("Royal enfeild");
-		 vehicle.setBrand("classic 350");
+		 vehicle.setBrand("Himalayan");
 		 vehicle.setPrice(300000);
 		 vehicle.setOwnerName("uday");
 		 vehicle.setModel("Classic");
@@ -54,8 +54,8 @@ public class PaintRunner {
 		 
 		 boolean bike=vehicle.equals(vehicle2);
 		 System.out.println(bike);
-		 vehicle=vehicle2;
-		 System.out.println( vehicle=vehicle2);
+		 //vehicle=vehicle2;
+		 //System.out.println( vehicle=vehicle2);
 		 System.out.println("***********************************************");
 		 
 		 WaterBottel bottel=new WaterBottel();
@@ -76,8 +76,8 @@ public class PaintRunner {
 		 
 		 boolean bottel3=bottel.equals(bottel2);
 		 System.out.println(bottel3);
-		 bottel=bottel2;
-		 System.out.println(bottel=bottel2);
+		 //bottel=bottel2;
+		 //System.out.println(bottel=bottel2);
 		 
 		 System.out.println("----------------------------------------------");
 		 
@@ -96,10 +96,12 @@ public class PaintRunner {
 			System.out.println(currancy);
 			Currancy currancy2=new Currancy("local", 20, 'R', 12, false, "india", 90, "paper", 120, "only few");
 			System.out.println(currancy2);
+			
+			
 			boolean ref=currancy.equals(currancy2);
 			System.out.println(ref);
-			currancy=currancy2;
-			System.out.println(currancy=currancy2);
+			//currancy=currancy2;
+			//System.out.println(currancy=currancy2);
 			
 			God god=new God();
 			god.setEntryFees(65);
@@ -180,8 +182,8 @@ public class PaintRunner {
 			
 			boolean lips3=lips.equals(lips2);
 			System.out.println(lips3);
-			lips=lips2;
-			System.out.println(lips=lips2);
+			//lips=lips2;
+			//System.out.println(lips=lips2);
 					
 		
 		}
