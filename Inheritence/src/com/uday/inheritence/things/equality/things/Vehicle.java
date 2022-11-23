@@ -44,7 +44,7 @@ public class Vehicle {
 		if (obj instanceof Vehicle) {
 			System.out.println("other is vehicle can check the properties");
 			Vehicle casted = (Vehicle) obj;
-			if (this.brand.equals(casted.brand) || this.name.equals(casted.name)) {
+			if (this.brand.equals(casted.brand)&& this.name.equals(casted.name)) {
 				System.out.println("brand is same and name is same");
 				
 				return true;
@@ -53,7 +53,7 @@ public class Vehicle {
 				System.err.println("other is not vehicle, cannot check the properties");
 			}
 		}
-		return true;
+		return false;
 	}
 
 	public String getName() {

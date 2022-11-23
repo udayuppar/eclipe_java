@@ -130,7 +130,7 @@ public class Paint {
 		} else {
 			System.err.println("other is not paint, cannot check the properties");
 		}
-		return true;
+		return false;
 
 	}
 

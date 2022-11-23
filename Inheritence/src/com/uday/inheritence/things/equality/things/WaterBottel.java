@@ -42,8 +42,8 @@ public class WaterBottel {
 		if (obj instanceof WaterBottel) {
 			System.out.println("other is water bottel can check the properties");
 			WaterBottel casted = (WaterBottel) obj;
-			if (this.brand.equals(casted.brand) || this.name.equals(casted.name) || this.model.equals(casted.model)) {
-				System.out.println("brand is same and name is same");
+			if (this.brand.equals(casted.brand) && this.name.equals(casted.name) && this.model.equals(casted.model)) {
+				System.out.println("brand ,model and name is same");
 				
 				return true;
 
@@ -51,7 +51,7 @@ public class WaterBottel {
 				System.err.println("other is not water botel, cannot check the properties");
 			}
 		}
-		return true;
+		return false;
 	}
 
 	public String getName() {
