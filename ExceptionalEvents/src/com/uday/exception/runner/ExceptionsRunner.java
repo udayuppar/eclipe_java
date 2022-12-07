@@ -43,6 +43,8 @@ public class ExceptionsRunner  {
 	InvalidAttributeValueException,InvalidFormatException,InvalidActivityException,
 	AbortException,JarException,CRLException,LinkException,CMMException,javax.sound.midi.MidiUnavailableException,
 	MailcapParseException,AcceptPendingException{
+		
+		
 		ExceptionalEvents events=new ExceptionalEvents();
 		events.runTimeException();
 		events.ArithmeticException(null);
