@@ -1,28 +1,17 @@
-package com.uday.curd.ipl.dto;
+package com.uday.curd.theater.DTO;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public  abstract class AbstractAuditDto  implements Serializable{
-	
+public  abstract class AbstractAuditDto implements Serializable {
 	private String createdBy;
 	private String updatedBy;
 	private LocalDateTime criatedDate;
 	private LocalDateTime updatedDate;
 	
 	public AbstractAuditDto() {
-		System.out.println("running default const");
+		System.out.println("Running Default Const");
 	}
-	
-	
-
-	@Override
-	public String toString() {
-		return "AbstractAuditDto [criatedBy=" + createdBy + ", updatedBy=" + updatedBy + ", criatedDate=" + criatedDate
-				+ ", updatedDate=" + updatedDate + ", toString()=" + super.toString() + "]";
-	}
-
-
 
 	public AbstractAuditDto(String createdBy, String updatedBy, LocalDateTime criatedDate, LocalDateTime updatedDate) {
 		super();
@@ -32,14 +21,18 @@ public  abstract class AbstractAuditDto  implements Serializable{
 		this.updatedDate = updatedDate;
 	}
 
+	@Override
+	public String toString() {
+		return "AbstractAuditDTO [createdBy=" + createdBy + ", updatedBy=" + updatedBy + ", criatedDate=" + criatedDate
+				+ ", updatedDate=" + updatedDate + "]";
+	}
 
-
-	public String getCriatedBy() {
+	public String getCreatedBy() {
 		return createdBy;
 	}
 
-	public void setCriatedBy(String criatedBy) {
-		this.createdBy = criatedBy;
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
 	}
 
 	public String getUpdatedBy() {
@@ -66,5 +59,6 @@ public  abstract class AbstractAuditDto  implements Serializable{
 		this.updatedDate = updatedDate;
 	}
 	
+
 
 }
