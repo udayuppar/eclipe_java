@@ -26,7 +26,7 @@ class BikeRunner {
 		String bike17="Spender +";
 		String bike18="Activa Scooty";
 		
-		Set<String> set=new LinkedHashSet<String>();
+		Set<String   > set=new LinkedHashSet<String>();
 		set.add(bike1);
 		set.add(bike2);
 		set.add(bike3);
@@ -45,6 +45,9 @@ class BikeRunner {
 		set.add(bike16);
 		set.add(bike17);
 		set.add(bike18);
+		
+		
+		System.out.println(set.add("Uday"));
 		
 		System.out.println(set.size());
 		set.clear();

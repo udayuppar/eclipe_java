@@ -7,8 +7,8 @@ import java.util.Iterator;
 public class DamsInIndia {
 
 	public static void main(String[] args) {
-		
-		String reverse="";
+
+		String reverse = " ";
 
 		Collection<String> karnataka = new ArrayList<String>();
 		karnataka.add("Krishna Raja Sagara");
@@ -140,7 +140,6 @@ public class DamsInIndia {
 
 		Collection<String> india = new ArrayList<String>();
 		india.addAll(karnataka);
-
 		india.addAll(rajasthan);
 		india.addAll(andraPradesh);
 		india.addAll(telangana);
@@ -195,7 +194,7 @@ public class DamsInIndia {
 				System.err.println("-----Dam name length is more than 15-----:" + element);
 			}
 		}
-		
+
 		System.out.println(System.lineSeparator());
 		System.out.println("------------Dam name is writing in UPPAR CASE-------------------");
 		Iterator<String> upper = india.iterator();
@@ -203,7 +202,7 @@ public class DamsInIndia {
 			String element = upper.next();
 			System.out.println(element.toUpperCase());
 		}
-		
+
 		System.out.println(System.lineSeparator());
 		System.out.println("------------Dam name is writing in LOWER CASE-------------------");
 		Iterator<String> lower = india.iterator();
@@ -213,43 +212,47 @@ public class DamsInIndia {
 		}
 		System.out.println(System.lineSeparator());
 		System.out.println("------contains------------");
-		
-		boolean contains=india.contains("Krishna Raja Sagara");
-		System.out.println("contains Krishna Raja Sagara : "+contains);
-		
-		boolean contains1=india.contains("tungabhadra");
-		System.out.println("contains Tungabhadra: "+contains);
-		
-		boolean contains2=india.contains("tunhadra");
-		System.out.println("contains Tungabhadra: "+contains);
-		
-		
-		/*System.out.println(System.lineSeparator());
+
+		boolean contains = india.contains("Krishna Raja Sagara");
+		System.out.println("contains Krishna Raja Sagara : " + contains);
+
+		boolean contains1 = india.contains("Tungabhadra");
+		System.out.println("contains Tungabhadra: " + contains1);
+
+		boolean contains2 = india.contains("tunhadra");
+		System.out.println("contains Tungabhadra: " + contains2);
+
+		System.out.println(System.lineSeparator());
 		System.out.println("------contains------------");
-		if(india.contains("Krishna Raja Sagara")) {
+		if (india.contains("Krishna Raja Sagara")) {
 			System.out.println("Krishna Raja Sagara is present");
-		}else {
+		} else {
 			System.out.println("Krishna Raja Sagara is not present");
-		}*/
+		}
+		
+		if (india.contains("Tungabhadra")) {
+			System.out.println("Tungabhadra is present");
+		} else {
+			System.out.println("Tungabhadra is not present");
+		}
 		
 		
+
 		Iterator<String> pall = india.iterator();
 		while (pall.hasNext()) {
 			String element = pall.next();
-			System.out.println(element);
-			int uday=element.length();
-			for(int i=uday-1;i>=0;i--) {
-				reverse=reverse + element.charAt(i);
-				if(element.toLowerCase().equals(reverse.toLowerCase())){
-					System.out.println("element name is a pallandrom :"+element);
-				}
-				else {
-					System.err.println("element is not a pallandrom :"+element);
-						
+			// System.out.println(element);
+			int value = element.length();
+			for (int i = (value) - 1; i >= 0; i--) {
+				reverse = reverse + element.charAt(i);
+				if (element.toLowerCase().equals(reverse.toLowerCase())) {
+					System.out.println("element name is a pallandrom :" + element);
+				} else {
+					System.err.println("element is not a pallandrom :" + element);
+
 				}
 			}
-				
-			
-	}
+
+		}
 	}
 }
