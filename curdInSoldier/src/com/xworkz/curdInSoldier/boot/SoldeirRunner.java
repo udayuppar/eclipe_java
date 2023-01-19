@@ -15,6 +15,8 @@ public class SoldeirRunner {
 		service.setRepository(repository);
 		
 		service.validateAndSave(dto);
+		
+		
 
 	}
 
