@@ -1,6 +1,6 @@
 package com.uday.encapsulation.things.aeroplane;
 
-class AeroplaneModify {
+ public class AeroplaneModify {
 	public void useAeroplane(Aeroplane aeroplane) {
 		System.out.println("accessing Aeroplane name:" + aeroplane.getName());
 		aeroplane.setName("Qatar Airways");

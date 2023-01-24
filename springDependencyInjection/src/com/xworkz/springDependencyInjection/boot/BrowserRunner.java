@@ -26,6 +26,13 @@ public class BrowserRunner {
 		Browser browser2=container.getBean(FireBox.class);
 		browser2.browse();
 		System.out.println(browser2);
+		
+		
+		/* int[]  x = {120, 200, 016};
+               for(int i = 0; i < x.length; i++){
+                        System.out.print(x[i] + “ “);
+               }*/
+		//120,200,14
 
 	}
 

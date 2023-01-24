@@ -7,9 +7,9 @@ public class AirportAuthorityRunner {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		AirportPassengers passenger=new AirportPassengers();
-		AirportAuthority authority=new AirportAuthority(passenger);
+
+		AirportPassengers passenger = new AirportPassengers();
+		AirportAuthority authority = new AirportAuthority(passenger);
 		authority.check();
 
 	}

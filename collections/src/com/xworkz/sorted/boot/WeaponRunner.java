@@ -72,9 +72,16 @@ public class WeaponRunner {
 	System.out.println(System.lineSeparator());
 	System.out.println("Weapons is sort by name and madeOn ascending order.......");
 	//Comparator<WeaponDto> dto3=(b1,b2)->b1.getName().compareToIgnoreCase(b2.getName());
-	//Comparator<WeaponDto> dto4=(c1,c2)->c1.getMadeOn().compareTo(c2.getMadeOn());
+	// Comparator<WeaponDto> dto4=(c1,c2)->c1.getMadeOn().compareTo(c2.getMadeOn());
 	weapons.stream().sorted((b1,b2)->b1.getName().compareToIgnoreCase(b2.getName()))
 	.sorted((c1,c2)->c1.getMadeOn().compareTo(c2.getMadeOn())).forEach(e->System.out.println(e.getName()+e.getMadeOn()));
+	
+	
+	
+	
+	
+	
+	
 	
 	System.out.println(System.lineSeparator());
 	System.out.println("Weapons is sort by type , madeBy and name in dece.......");
@@ -84,7 +91,7 @@ public class WeaponRunner {
 	.forEach(e->System.out.println(":"+e.getType()+":"+e.getMadeBy()+":"+e.getName()));
 	
 	
-	
+	// 
 	
 	
 	

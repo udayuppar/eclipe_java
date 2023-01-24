@@ -33,7 +33,7 @@ public class Fuel {
 			this.brand.name = "Indian";
 			this.brand.gstNumber = 1345789l;
 			this.brand.rating = 10;
-		} else {
+		} else { 
 			System.out.println("invoking exist");
 		}
 		System.out.println("customer data type brand");

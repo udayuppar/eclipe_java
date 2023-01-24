@@ -11,7 +11,17 @@ import com.xworkz.springInitialisation.things.Season;
 public class SeasonConfiguration {
 	
 	
-	@Bean
+	
+	@Bean("temp")
+	public Season temp() {
+		Season season2=new Season();
+		season2.setDurationInMounth(5);
+		season2.setName("mansoon");
+		season2.setStartingMounth("Janavary");
+		return season2;
+	}
+	
+	@Bean("weather")
 	public Season weather() {
 		Season season=new Season();
 		season.setName("Summer");
@@ -20,6 +30,9 @@ public class SeasonConfiguration {
 		return season;
 		
 		
+		
+		
 	}
+	
 
 }

@@ -1,7 +1,9 @@
 package com.uday.copies.things;
 
+import com.uday.copies.constructerr.Engine;
+
 public class Bike {
-	
+
 	public String name;
 	public String owenName;
 	public boolean working;
@@ -12,23 +14,24 @@ public class Bike {
 	public String[] colour;
 	public double[] price;
 	public String[] tireName;
+	public Engine PISTON;
 	
-	public Bike(String name,String owenName,boolean working,boolean headlight,int millage,int noOfIndicater,String[] brand,String[] colour,double[] price,String[] tireName)
-	{
-		this.name=name;
-		this.owenName=owenName;
-		this.working=working;
-		this.headlight=headlight;
-		this.millage=millage;
-		this.noOfIndicater=noOfIndicater;
-		this.brand=brand;
-		this.colour=colour;
-		this.price=price;
-		this.tireName=tireName;
+
+	public Bike(String name, String owenName, boolean working, boolean headlight, int millage, int noOfIndicater,
+			String[] brand, String[] colour, double[] price, String[] tireName) {
+		this.name = name;
+		this.owenName = owenName;
+		this.working = working;
+		this.headlight = headlight;
+		this.millage = millage;
+		this.noOfIndicater = noOfIndicater;
+		this.brand = brand;
+		this.colour = colour;
+		this.price = price;
+		this.tireName = tireName;
 	}
-	
-	public void print()
-	{
+
+	public void print() {
 		System.out.println(this.name);
 		System.out.println(this.owenName);
 		System.out.println(this.working);
@@ -41,7 +44,7 @@ public class Bike {
 		for (int i = 0; i < brand.length; i++) {
 			String string = brand[i];
 			System.out.println(string);
-			
+
 		}
 		System.out.println("**************************************");
 		System.out.println("colour");
@@ -49,7 +52,7 @@ public class Bike {
 		for (int i = 0; i < colour.length; i++) {
 			String string = colour[i];
 			System.out.println(string);
-			
+
 		}
 		System.out.println("**************************************");
 		System.out.println("bike price");
@@ -57,7 +60,7 @@ public class Bike {
 		for (int i = 0; i < price.length; i++) {
 			double string = price[i];
 			System.out.println(string);
-			
+
 		}
 		System.out.println("**************************************");
 		System.out.println("tire name");
@@ -65,10 +68,8 @@ public class Bike {
 		for (int i = 0; i < tireName.length; i++) {
 			String string = tireName[i];
 			System.out.println(string);
-			
+
 		}
 	}
-	
-	
 
 }

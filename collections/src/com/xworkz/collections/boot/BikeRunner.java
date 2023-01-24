@@ -46,6 +46,9 @@ class BikeRunner {
 		set.add(bike17);
 		set.add(bike18);
 		
+		 boolean least=set.containsAll(set);
+		 System.out.println("Contains:"+least);
+		
 		
 		System.out.println(set.add("Uday"));
 		

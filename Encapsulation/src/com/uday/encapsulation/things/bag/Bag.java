@@ -63,6 +63,6 @@ public class Bag {
 
 	void setIdealFor(String idealFor) {
 		this.idealFor = idealFor;
-	}
+	} 	
 
 }

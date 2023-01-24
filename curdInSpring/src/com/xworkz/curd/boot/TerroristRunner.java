@@ -9,7 +9,7 @@ public class TerroristRunner {
 	public static void main(String[] args) {
 		
 		TerroristDto dto=new TerroristDto();
-		dto.setName("Umar Faruk");
+		dto.setName("Spoorthi");
 		System.out.println(dto);
 		
 		TerroristSurvice survice=new TerroristSurviceImpl();

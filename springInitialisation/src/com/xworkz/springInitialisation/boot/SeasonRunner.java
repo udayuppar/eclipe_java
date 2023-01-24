@@ -17,7 +17,7 @@ public class SeasonRunner {
 		String[] beans=spring.getBeanDefinitionNames();
 		System.out.println(Arrays.toString(beans));
 		
-		Season season=spring.getBean("season", Season.class);
+		Season season=spring.getBean("temp", Season.class);
 		System.out.println(season);
 		System.out.println(season.getName());
 		System.out.println(season.getDurationInMounth());

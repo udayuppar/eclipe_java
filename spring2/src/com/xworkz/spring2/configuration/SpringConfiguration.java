@@ -205,10 +205,10 @@ public class SpringConfiguration {
 		list.add(3);
 		list.add(4);
 		list.add(5);
-		//System.out.println(list);
+		// System.out.println(list);
 		return (ArrayList) list;
 	}
-	
+
 	@Bean("mapCityAndPincodes")
 	public Map pincodes() {
 		Map<String, Double> map = new HashMap<String, Double>();
@@ -217,8 +217,8 @@ public class SpringConfiguration {
 		map.put("Hubli", 572201d);
 		map.put("Davangere", 515151d);
 		map.put("Hosadurga", 577527d);
-		//System.out.println(map);
+		// System.out.println(map);
 		return map;
 	}
-	
+
 }

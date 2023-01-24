@@ -6,9 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.xworkz.autoWiredConstInitiliation.beans.Engine;
-import com.xworkz.autoWiredConstInitiliation.beans.NewsPaper;
 import com.xworkz.autoWiredConstInitiliation.configuration.EngineConfiguration;
-import com.xworkz.autoWiredConstInitiliation.configuration.NewsPaperConfiguration;
 
 public class EngineRunner {
 

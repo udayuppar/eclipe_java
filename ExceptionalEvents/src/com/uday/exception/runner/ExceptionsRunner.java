@@ -46,7 +46,14 @@ public class ExceptionsRunner  {
 		
 		
 		ExceptionalEvents events=new ExceptionalEvents();
+		System.out.println("before exceptions");
 		events.runTimeException();
+		System.out.println(" exceptions");
+		
+		
+		
+		
+		
 		events.ArithmeticException(null);
 		events.ArrayStoreException();
 		events.annotationTypeMismatchException();
