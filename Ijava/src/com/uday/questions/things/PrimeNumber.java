@@ -22,7 +22,7 @@ public class PrimeNumber
 				System.out.println("not a prime number:"+n);
 			}
 		}*/
-	  /* Scanner sc= new Scanner(System.in);
+	  Scanner sc= new Scanner(System.in);
 			   int a=sc.nextInt();
            int no=a;
           int count=0;
@@ -40,7 +40,7 @@ public class PrimeNumber
 	    	else
 	    	{
 	    		System.out.println(no+" it is not a prime numner");
-	        }*/
+	        }
 	       /*int a=10;
 	       int b=20;
 	        int c=a;
@@ -48,10 +48,10 @@ public class PrimeNumber
 	             b=c;
 	             System.out.println(a);
 	             System.out.println(b);*/
-	       String s="Darshan";
+	      /* String s="Darshan";
 	       for(int i=s.length()-1;i>=0;i--)
 	       {
 	    	   System.out.print(s.charAt(i));
-	       }
+	       }*/
 }
 }
