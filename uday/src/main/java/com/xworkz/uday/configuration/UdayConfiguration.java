@@ -1,4 +1,4 @@
-package com.xworkz.uday.configuration;
+ package com.xworkz.uday.configuration;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;

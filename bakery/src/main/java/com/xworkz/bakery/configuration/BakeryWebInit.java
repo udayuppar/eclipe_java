@@ -1,4 +1,4 @@
- package com.xworkz.uday.configuration;
+package com.xworkz.bakery.configuration;
 
 import java.util.Arrays;
 
@@ -6,12 +6,15 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class UdayWebInit  extends AbstractAnnotationConfigDispatcherServletInitializer implements WebMvcConfigurer {
 
-	
-	public UdayWebInit() {
+
+public class BakeryWebInit extends AbstractAnnotationConfigDispatcherServletInitializer implements WebMvcConfigurer {
+
+	public BakeryWebInit() {
 		System.out.println("Create:"+this.getClass().getSimpleName());
 	}
+	  
+	
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		System.out.println("getRootConfigClasses");
@@ -21,7 +24,7 @@ public class UdayWebInit  extends AbstractAnnotationConfigDispatcherServletIniti
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
 		System.out.println("getServletConfigClasses");
-		Class[] configClass= {UdayConfiguration.class};
+		Class[] configClass= {BakaryConfiguartion.class};
 		System.out.println("Config class:"+Arrays.toString(configClass));
 		return configClass;
 	}
