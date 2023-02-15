@@ -1,4 +1,4 @@
-package com.uday.questions.things;
+ package com.uday.questions.things;
 
 public class SecondLargestnumber {
 	

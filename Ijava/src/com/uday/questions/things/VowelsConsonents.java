@@ -21,8 +21,8 @@ public class VowelsConsonents {
 			{
 				cCount++;
 			}
-			System.out.println(vCount);
-			System.out.println(cCount);
+			System.out.println(vCount +"vowels");
+			System.out.println(cCount+"consonents");
 		}
 	}
 

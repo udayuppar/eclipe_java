@@ -23,11 +23,12 @@
    body {
     background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg');
     background-repeat: no-repeat;
+    
    }
-        </style>
+ </style>
 
 <form action="bakery" method="post">
-<nav class="navbar navbar-light bg-warning">
+<nav class="navbar navbar-light bg-warning"><img alt="" src="">
 			<!-- Navbar content -->
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#"> <img

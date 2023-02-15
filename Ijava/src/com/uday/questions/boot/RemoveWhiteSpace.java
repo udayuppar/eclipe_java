@@ -12,7 +12,7 @@ public class RemoveWhiteSpace {
 				count=count+1;
 				
 			}
-			else {
+		  else {
 				s=s+ch;
 			}
 			if(count>0 && count<=1) {
