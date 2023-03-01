@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FruitsDto {
 
+	private int id;
 	@Size(min = 3,max = 20,message = "name Should be more than 3 and less than 20")
 	private String name;
 	@NotBlank(message = "Select fruits must be selected")

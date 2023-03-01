@@ -48,7 +48,7 @@
 </head>
 <body>
 
-<h3 style="color:blue;">Order The Fruits</h3>
+<h3 style="color:blue;">update The Fruits</h3>
 	<c:forEach items="${error}" var="e">
 		<pre>
 	<span style="color: red">${e.message}</span>
@@ -57,22 +57,22 @@
 	
 	
 
-<form action="fruitss" method="post">
+<form action="update" method="post">
 
  <div class="form-group">
     <label for="formGroupExampleInput">Customer ID</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=" Enter  Id " name="id"/>
+    <input type="text" class="form-control" id="formGroupExampleInput"  name="id" value="${dto.id}" readonly="readonly"/>
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput">Customer Name</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=" Enter  name " name="name"/>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=" Enter  name " name="name" value="${dto.name}" readonly="readonly"/>
   </div>
  
  
  
     Select Fruits <select class="form-select"
 			aria-label="Default select example" name=selectFruits >
-			<option selected value="">Select Fruits</option>
+			<option selected value="${dto.selectFruits }">${dto.selectFruits}</option>
 			<c:forEach items="${select}" var="c">
 			<option value="${c}">${c}</option>
 			</c:forEach>
@@ -83,20 +83,20 @@
   
    <div class="form-group">
     <label for="formGroupExampleInput2">Quantity</label>
-    <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Enter Quantity" name="quantity"/>
+    <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Enter Quantity" name="quantity" value="${dto.quantity}"/>
   </div>
   
    <div class="form-group">
     <label for="formGroupExampleInput2">Location</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter location" name="location"/>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter location" name="location" value="${dto.location }"/>
   </div>
   
    <div class="form-group">
     <label for="formGroupExampleInput2">Mobile Number</label>
-    <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Enter mobile number" name="mobileNumber"/>
+    <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Enter mobile number" name="mobileNumber" value="${dto.mobileNumber }"/>
   </div>
   
-   <input type="submit" value="order" />
+   <input type="submit" value="Update" />
   
 </form>
 

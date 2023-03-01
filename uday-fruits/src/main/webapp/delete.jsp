@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Fruits-shop</title>
-</head>
+<title>X-Workz</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -26,7 +25,7 @@
 <nav class="navbar navbar-expand-lg  navbar-light bg-dark">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="#"><img alt=""
-		src="https://thumbs.dreamstime.com/z/fruit-2999796.jpg"
+			src="https://thumbs.dreamstime.com/z/fruit-2999796.jpg"
 			alt="" width="90" height="80"></a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarNav" aria-controls="navbarNav"
@@ -34,23 +33,41 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
-		<h2 style="color:green;">FRIENDS FRUITS SHOP</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" /></a>
-			<a href="fruitss"> Order </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="search.jsp"> SEARCH </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="findByName.jsp"> FindByName </a>&nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="findByLocation.jsp"> FindByLocation </a>
-				<a href="delete.jsp"> Delete </a>
-
+			<a
+				href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" /></a>
+			<a href="fruits.jsp"> Order</a>
 		</div>
 	</div>
-</nav>
-
-
-</head>
+</nav></head>
 <body>
 
-<h3 style="color:red;">WELLCOME TO FRUITS WOLD....</h3>
+	
+	<h2  style="color:green;">Search the fruits</h2>
+	<h3>
+		<span style="color: red;">${message }</span>
+	</h3>
+
+	<form action="delete" method="get">
+
+		Search by Id <input type="text" name="id" />
+		 <input type="submit"
+			value="search" />
+	</form>
+
+	<div>
+
+		<h4>Search result:</h4>
+		<pre>
+	
+	Name:${dto.name }
+	Select Fruits :${dto.selectFruits }
+	Quantity :${dto.quantity }
+	location :${dto.location }
+	Mobile Number :${dto.mobileNumber }
+	</pre>
+	</div>
+
+
 
 </body>
 </html>
