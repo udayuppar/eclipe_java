@@ -84,7 +84,7 @@ public class FruitsController {
 		if (dto != null) {
 			model.addAttribute("dto", dto);
 		} else {
-			model.addAttribute("message", "Name not found");
+			model.addAttribute("messege", "Name not found");
 		}
 		return "findByName";
 	}
@@ -109,32 +109,19 @@ public class FruitsController {
 		model.addAttribute("select", select);
 		return "update";
 	}
-
-	@PostMapping("/update")
-	public String onUpdate(FruitsDto dto, Model model) {
-		System.out.println("Running on update in post mapping:" + dto);
-		Set<ConstraintViolation<FruitsDto>> violations = this.service.validateAndUpdate(dto);
-		if (violations.size() > 0) {
-			model.addAttribute("errors", violations);
-		} else {
-			model.addAttribute("message", "Update is saved sucess....");
-		}
-		return "update";
-	}
 	
 	@GetMapping("/delete")
 	public String onDelete(@RequestParam int id, Model model) {
-
-		System.out.println("Running delete in controller");
+		System.out.println("Running find By name in Controller:" + id);
 		FruitsDto dto = this.service.deleteById(id);
-		if (dto != null) {
-			model.addAttribute("dto", dto);
+		if (dto==null) {
+			
+			model.addAttribute("id", id);
+			//model.addAttribute("error", "Name not found");
+			model.addAttribute("message", "Delete Succesfully");
 		} else {
-			model.addAttribute("message", "Id  not found, please give valid Id");
+			model.addAttribute("error", "Name not found");
 		}
 		return "delete";
 	}
-	
-		
-
 }

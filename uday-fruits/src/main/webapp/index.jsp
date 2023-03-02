@@ -40,7 +40,7 @@
 			<a href="search.jsp"> SEARCH </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<a href="findByName.jsp"> FindByName </a>&nbsp;&nbsp;&nbsp;&nbsp;
 				<a href="findByLocation.jsp"> FindByLocation </a>
-				<a href="delete.jsp"> Delete </a>
+			
 
 		</div>
 	</div>

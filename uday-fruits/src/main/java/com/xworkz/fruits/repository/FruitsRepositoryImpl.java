@@ -69,9 +69,9 @@ public class FruitsRepositoryImpl implements FruitsRepository {
 
 			query.setParameter("loc", location);
 			System.out.println("this is List");
-			List<FruitsEntity> list =query.getResultList();
+			List<FruitsEntity> list = query.getResultList();
 			for (FruitsEntity fruitsEntity : list) {
-				System.out.println("======"+fruitsEntity);
+				System.out.println("======" + fruitsEntity);
 			}
 			System.out.println("Total list found in repo:" + list.size());
 
@@ -81,35 +81,33 @@ public class FruitsRepositoryImpl implements FruitsRepository {
 		}
 
 	}
-	
+
 	@Override
 	public boolean update(FruitsEntity entity) {
-		System.out.println("Running update in repo:"+entity);
-		EntityManager  manager=this.EntityManagerFactory.createEntityManager();
-		
+		System.out.println("Running update in repo:" + entity);
+		EntityManager manager = this.EntityManagerFactory.createEntityManager();
+
 		try {
-		EntityTransaction transaction=manager.getTransaction();
-		transaction.begin();
-		manager.merge(entity);
-		transaction.commit();
-		}finally {
+			EntityTransaction transaction = manager.getTransaction();
+			transaction.begin();
+			manager.merge(entity);
+			transaction.commit();
+		} finally {
 			manager.close();
 		}
 		return true;
 	}
-	
+
 	@Override
 	public FruitsEntity deleteById(int id) {
-		System.out.println("Running delete by id:"+id);
-		EntityManager manager=this.EntityManagerFactory.createEntityManager();
-		
-		FruitsEntity entity=manager.find(FruitsEntity.class, id);
-		manager.remove(entity);
+		EntityManager manager = this.EntityManagerFactory.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		FruitsEntity delete = manager.find(FruitsEntity.class, id);
+		transaction.begin();
+		manager.remove(delete);
+		transaction.commit();
 		manager.close();
-		
-		
-		return entity;
+		return delete;
 	}
-	
 
 }

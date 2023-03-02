@@ -181,7 +181,7 @@ public class FruitsServiceImpl implements FruitsService {
 		if(id>0) {
 			FruitsEntity entity=this.repository.deleteById(id);
 			
-			if(entity!=null) {
+		/*if(entity!=null) {
 				FruitsDto dto=new FruitsDto();
 				dto.setId(entity.getId());
 				dto.setName(entity.getName());
@@ -189,9 +189,8 @@ public class FruitsServiceImpl implements FruitsService {
 				dto.setQuantity(entity.getQuantity());
 				dto.setLocation(entity.getLocation());
 				dto.setMobileNumber(entity.getMobileNumber());
-				return dto;
+				return dto;*/
 			}
-		}
 		return FruitsService.super.deleteById(id);
 	}
 

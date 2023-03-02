@@ -49,9 +49,9 @@
 <body>
 
 
-	<h2 style="color: green;">Search By Name</h2>
+	<h3 style="color: green;">Search By Name</h3>
 	<h3>
-		<span style="color: red;">${message }</span>
+		<span style="color: red;">${error }</span>
 	</h3>
 
 	<form action="findByName" method="get">
@@ -70,7 +70,9 @@
 	<th scope="col">Location</th>
 	<th scope="col">MobileNumber</th>
 	<th scope="col">Edit</th>
+	<th scope="col">Delete</th>
 	
+	 
 	</tr>
 	
 	<c:forEach items="${dto}" var="d">
@@ -82,6 +84,7 @@
 	<td>${d.location}</td>
 	<td>${d.mobileNumber}</td>
 	<td> <a href="update?id=${d.id }">Edit</a></td>
+	<td> <a href="delete?id=${d.id }">Delete</a></td>
 	
 	</tr>
 	
