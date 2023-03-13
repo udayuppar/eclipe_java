@@ -54,10 +54,11 @@
 		<span style="color: red;">${messege }</span>
 	</h3>
 
-	<form action="findByName" method="get">
+	<form action="findByNameAndLocation" method="post">
 
-	Search by Name <input type="text" name="name" /> <input type="submit"
-			value="search" />
+	Search by Name And Location <input type="text"  placeholder="Enter the name" name="name"  />
+	<input type="text"  placeholder="Enter the location" name="location" >
+	 <input type="submit" value="search" />
 	</form>&nbsp;&nbsp;&nbsp;
 
 	<div>
@@ -88,6 +89,32 @@
 	
 	</tr>
 	
+	</c:forEach>
+	
+	<c:forEach items="${dtoname}" var="n">
+	<tr>
+	<td>${n.id}</td>
+	<td>${n.name}</td>
+	<td>${n.selectFruits}</td>
+	<td>${n.quantity}</td>
+	<td>${n.location}</td>
+	<td>${n.mobileNumber}</td>
+	<td><a href="update?id=${n.id}">Edit</a></td>
+	<td><a href="delete?id=${n.id}">Delete</a></td>
+	</tr>
+	</c:forEach>
+	
+	<c:forEach items="${dtoLocation}" var="n">
+	<tr>
+	<td>${n.id}</td>
+	<td>${n.name}</td>
+	<td>${n.selectFruits}</td>
+	<td>${n.quantity}</td>
+	<td>${n.location}</td>
+	<td>${n.mobileNumber}</td>
+	<td><a href="update?id=${n.id}">Edit</a></td>
+	<td><a href="delete?id=${n.id}">Delete</a></td>
+	</tr>
 	</c:forEach>
 	</table>
 	

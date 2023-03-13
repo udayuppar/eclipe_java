@@ -11,6 +11,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,12 +44,13 @@ public class FruitsServiceImpl implements FruitsService {
 			System.out.println("There is no violation in dto save in controller:" + dto);
 
 			FruitsEntity entity = new FruitsEntity();
-			entity.setId(dto.getId());
-			entity.setName(dto.getName());
-			entity.setSelectFruits(dto.getSelectFruits());
-			entity.setQuantity(dto.getQuantity());
-			entity.setLocation(dto.getLocation());
-			entity.setMobileNumber(dto.getMobileNumber());
+			BeanUtils.copyProperties(dto, entity);
+			/*
+			 * entity.setId(dto.getId()); entity.setName(dto.getName());
+			 * entity.setSelectFruits(dto.getSelectFruits());
+			 * entity.setQuantity(dto.getQuantity()); entity.setLocation(dto.getLocation());
+			 * entity.setMobileNumber(dto.getMobileNumber());
+			 */
 
 			boolean saved = this.repository.save(entity);
 			System.out.println("Saved:" + saved);
@@ -68,12 +70,13 @@ public class FruitsServiceImpl implements FruitsService {
 				System.out.println("the entity is good convert value into dto");
 
 				FruitsDto dto = new FruitsDto();
-				dto.setId(entity.getId());
-				dto.setName(entity.getName());
-				dto.setSelectFruits(entity.getSelectFruits());
-				dto.setQuantity(entity.getQuantity());
-				dto.setLocation(entity.getLocation());
-				dto.setMobileNumber(entity.getMobileNumber());
+				BeanUtils.copyProperties(entity, dto);
+				/*
+				 * dto.setId(entity.getId()); dto.setName(entity.getName());
+				 * dto.setSelectFruits(entity.getSelectFruits());
+				 * dto.setQuantity(entity.getQuantity()); dto.setLocation(entity.getLocation());
+				 * dto.setMobileNumber(entity.getMobileNumber());
+				 */
 				return dto;
 			}
 
@@ -93,12 +96,14 @@ public class FruitsServiceImpl implements FruitsService {
 			for (FruitsEntity fruitsEntity : entity) {
 
 				FruitsDto dto = new FruitsDto();
-				dto.setId(fruitsEntity.getId());
-				dto.setName(fruitsEntity.getName());
-				dto.setSelectFruits(fruitsEntity.getSelectFruits());
-				dto.setQuantity(fruitsEntity.getQuantity());
-				dto.setLocation(fruitsEntity.getLocation());
-				dto.setMobileNumber(fruitsEntity.getMobileNumber());
+				BeanUtils.copyProperties(fruitsEntity, dto);
+				/*
+				 * dto.setId(fruitsEntity.getId()); dto.setName(fruitsEntity.getName());
+				 * dto.setSelectFruits(fruitsEntity.getSelectFruits());
+				 * dto.setQuantity(fruitsEntity.getQuantity());
+				 * dto.setLocation(fruitsEntity.getLocation());
+				 * dto.setMobileNumber(fruitsEntity.getMobileNumber());
+				 */
 				listDto.add(dto);
 
 				System.out.println("Size of dtos:" + listDto.size());
@@ -125,12 +130,15 @@ public class FruitsServiceImpl implements FruitsService {
 			for (FruitsEntity fruitsEntity : entity) {
 
 				FruitsDto dto = new FruitsDto();
-				dto.setId(fruitsEntity.getId());
-				dto.setName(fruitsEntity.getName());
-				dto.setSelectFruits(fruitsEntity.getSelectFruits());
-				dto.setQuantity(fruitsEntity.getQuantity());
-				dto.setLocation(fruitsEntity.getLocation());
-				dto.setMobileNumber(fruitsEntity.getMobileNumber());
+
+				BeanUtils.copyProperties(fruitsEntity, dto);
+				/*
+				 * dto.setId(fruitsEntity.getId()); dto.setName(fruitsEntity.getName());
+				 * dto.setSelectFruits(fruitsEntity.getSelectFruits());
+				 * dto.setQuantity(fruitsEntity.getQuantity());
+				 * dto.setLocation(fruitsEntity.getLocation());
+				 * dto.setMobileNumber(fruitsEntity.getMobileNumber());
+				 */
 				listDto.add(dto);
 
 				System.out.println("Size of dtos:" + listDto.size());
@@ -160,12 +168,13 @@ public class FruitsServiceImpl implements FruitsService {
 			System.out.println("There is no violation in dto save in controller:" + dto);
 
 			FruitsEntity entity = new FruitsEntity();
-			entity.setId(dto.getId());
-			entity.setName(dto.getName());
-			entity.setSelectFruits(dto.getSelectFruits());
-			entity.setQuantity(dto.getQuantity());
-			entity.setLocation(dto.getLocation());
-			entity.setMobileNumber(dto.getMobileNumber());
+			BeanUtils.copyProperties(dto, entity);
+			/*
+			 * entity.setId(dto.getId()); entity.setName(dto.getName());
+			 * entity.setSelectFruits(dto.getSelectFruits());
+			 * entity.setQuantity(dto.getQuantity()); entity.setLocation(dto.getLocation());
+			 * entity.setMobileNumber(dto.getMobileNumber());
+			 */
 
 			boolean saved = this.repository.update(entity);
 			System.out.println("Saved  update in service:" + saved);
@@ -177,21 +186,55 @@ public class FruitsServiceImpl implements FruitsService {
 
 	@Override
 	public FruitsDto deleteById(int id) {
-		System.out.println("Runnig delete by id in service:"+id);
-		if(id>0) {
-			FruitsEntity entity=this.repository.deleteById(id);
-			
-		/*if(entity!=null) {
-				FruitsDto dto=new FruitsDto();
-				dto.setId(entity.getId());
-				dto.setName(entity.getName());
-				dto.setSelectFruits(entity.getSelectFruits());
-				dto.setQuantity(entity.getQuantity());
-				dto.setLocation(entity.getLocation());
-				dto.setMobileNumber(entity.getMobileNumber());
-				return dto;*/
-			}
+		System.out.println("Runnig delete by id in service:" + id);
+		if (id > 0) {
+			FruitsEntity entity = this.repository.deleteById(id);
+
+			/*
+			 * if(entity!=null) { FruitsDto dto=new FruitsDto(); dto.setId(entity.getId());
+			 * dto.setName(entity.getName()); dto.setSelectFruits(entity.getSelectFruits());
+			 * dto.setQuantity(entity.getQuantity()); dto.setLocation(entity.getLocation());
+			 * dto.setMobileNumber(entity.getMobileNumber()); return dto;
+			 */
+		}
 		return FruitsService.super.deleteById(id);
+	}
+
+	@Override
+	public List<FruitsDto> findAll() {
+		System.out.println("Running FindAll in service");
+		List<FruitsEntity> entities = this.repository.findAll();
+
+		List<FruitsDto> listDto = new ArrayList<FruitsDto>();
+		for (FruitsEntity fruitsEntity : entities) {
+			FruitsDto dto = new FruitsDto();
+			BeanUtils.copyProperties(fruitsEntity, dto);
+			
+			listDto.add(dto);
+		}
+
+		return listDto;
+	}
+
+	@Override
+	public List<FruitsDto> findByNameAndLocation(String name, String location) {
+		System.out.println("Running findByNameAndLocation in service: " + name + location);
+		if ((name != null && !name.isEmpty()) || (location != null && !location.isEmpty())) {
+			List<FruitsEntity> entities = this.repository.findByNameAndLocation(name, location);
+
+			List<FruitsDto> listDtos = new ArrayList<FruitsDto>();
+			for (FruitsEntity fruitsEntity : entities) {
+				FruitsDto dto=new FruitsDto();
+				BeanUtils.copyProperties(fruitsEntity, dto);
+				listDtos.add(dto);
+				System.out.println("Size of dtos:" + listDtos.size());
+				System.out.println("Size of entitys:" + entities.size());
+				return listDtos;
+			}
+		}else {
+			System.out.println("Name ANd LOcation in invalid:"+name+location);
+		}
+		return FruitsService.super.findByNameAndLocation(name, location);
 	}
 
 }

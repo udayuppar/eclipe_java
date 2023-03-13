@@ -29,4 +29,11 @@ public interface FruitsService {
 	default List<FruitsDto> findByLocation(String location) {
 		return Collections.emptyList();
 	}
+	
+	default List<FruitsDto> findAll() {
+		return Collections.emptyList();
+	}
+	default List<FruitsDto> findByNameAndLocation(String name,String location) {
+		return Collections.emptyList();
+	}
 }

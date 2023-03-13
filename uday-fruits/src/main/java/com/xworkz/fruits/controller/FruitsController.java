@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.xworkz.fruits.dto.FruitsDto;
 import com.xworkz.fruits.service.FruitsService;
 
+//You use the JSP element to select a JSP file to store in the component. Enter the path to the JSP file. The path must begin with a forward slash.
+
 @Controller
 @RequestMapping("/")
 public class FruitsController {
@@ -84,7 +86,7 @@ public class FruitsController {
 		if (dto != null) {
 			model.addAttribute("dto", dto);
 		} else {
-			model.addAttribute("messege", "Name not found");
+			model.addAttribute("messege ", "Name not found");
 		}
 		return "findByName";
 	}
@@ -109,19 +111,78 @@ public class FruitsController {
 		model.addAttribute("select", select);
 		return "update";
 	}
-	
+
+	@PostMapping("/update")
+	public String onUpdate(FruitsDto dto, Model model) {
+		System.out.println("Running on update in post " + dto);
+		Set<ConstraintViolation<FruitsDto>> violations = this.service.validateAndUpdate(dto);
+		if (violations.size() > 0) {
+			model.addAttribute("error", violations);
+		} else {
+			model.addAttribute("message2", "Fruits update success");
+		}
+		return "update";
+	}
+
 	@GetMapping("/delete")
 	public String onDelete(@RequestParam int id, Model model) {
 		System.out.println("Running find By name in Controller:" + id);
 		FruitsDto dto = this.service.deleteById(id);
-		if (dto==null) {
-			
+		if (dto == null) {
+
 			model.addAttribute("id", id);
-			//model.addAttribute("error", "Name not found");
+			// model.addAttribute("error", "Name not found");
 			model.addAttribute("message", "Delete Succesfully");
 		} else {
 			model.addAttribute("error", "Name not found");
 		}
 		return "delete";
+	}
+
+	@GetMapping("findAll")
+	public String onFindAll(Model model) {
+		System.out.println("Running OnFindAll in Controller");
+		List<FruitsDto> dto = this.service.findAll();
+		if (dto != null) {
+			model.addAttribute("dto", dto);
+
+		} else {
+			model.addAttribute("message", "Data not Found");
+		}
+		return "findAll";
+	}
+
+	@PostMapping("findByNameAndLocation")
+	public String onFindByNameAndLocation(@RequestParam String name, String location, Model model) {
+		System.out.println("Running onFindByNameAndLocation in controller:" + name + location);
+		if (!name.isEmpty() && location.isEmpty()) {
+			List<FruitsDto> dtoname = this.service.findByName(name);
+			if (dtoname.size() != 0) {
+				model.addAttribute("dtoname", dtoname);
+				return "findByNameAndLocation";
+			} else {
+				model.addAttribute("message", "name not found");
+				return "findByNameAndLocation";
+			}
+		} else if (name.isEmpty() && !location.isEmpty()) {
+			List<FruitsDto> dtoLocation = this.service.findByLocation(location);
+			if (dtoLocation.size() != 0) {
+				model.addAttribute("dtoLocation", dtoLocation);
+				return "findByNameAndLocation";
+			} else {
+				model.addAttribute("message", "location not found");
+				return "findByNameAndLocation";
+			}
+
+		}else {
+
+		List<FruitsDto> dto = this.service.findByNameAndLocation(name, location);
+		if (dto != null) {
+			model.addAttribute("dto", dto);
+		} else {
+			model.addAttribute("messege", "data not Found");
+		}
+		return "findByNameAndLocation";
+		}
 	}
 }

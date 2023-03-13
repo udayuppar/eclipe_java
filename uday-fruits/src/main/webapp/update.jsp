@@ -53,7 +53,12 @@
 		<pre>
 	<span style="color: red">${e.message}</span>
 	</pre>
+	<span style="color: green">${message2}</span>
+
 	</c:forEach>
+	
+	
+	
 	
 	
 

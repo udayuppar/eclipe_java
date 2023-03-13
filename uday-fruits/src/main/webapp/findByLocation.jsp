@@ -46,7 +46,7 @@
 	</div>
 </nav>
 </head>
-<body>
+<body style="background-image: url('https://media.istockphoto.com/id/502355288/photo/gradient-abstract-background.jpg?s=612x612&w=0&k=20&c=g5qtLLYYvvtYbMd1S9s7Zo9kBU6KsWRHBhQxu1tHeek=') ;">
 
 
 	<h2 style="color: green;">Search By Location</h2>

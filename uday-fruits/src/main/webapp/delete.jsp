@@ -64,7 +64,8 @@
 	</form>&nbsp;&nbsp;&nbsp;
 
 	<div>
-	<table class="table table-bordered">
+	<tab
+	le class="table table-bordered">
 	<tr>
 	<th scope="col">Id</th>
 	<th scope="col">Name</th>

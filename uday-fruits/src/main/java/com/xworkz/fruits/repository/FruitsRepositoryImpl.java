@@ -70,9 +70,7 @@ public class FruitsRepositoryImpl implements FruitsRepository {
 			query.setParameter("loc", location);
 			System.out.println("this is List");
 			List<FruitsEntity> list = query.getResultList();
-			for (FruitsEntity fruitsEntity : list) {
-				System.out.println("======" + fruitsEntity);
-			}
+			
 			System.out.println("Total list found in repo:" + list.size());
 
 			return list;
@@ -108,6 +106,42 @@ public class FruitsRepositoryImpl implements FruitsRepository {
 		transaction.commit();
 		manager.close();
 		return delete;
+	}
+
+	@Override
+	public List<FruitsEntity> findAll() {
+		// TODO Auto-generated method stub
+		EntityManager entityManager = this.EntityManagerFactory.createEntityManager();
+		try {
+			Query query = entityManager.createNamedQuery("findAll");
+			System.out.println("Query:" + query);
+			List<FruitsEntity> list = query.getResultList();
+			System.out.println(list);
+			return list;
+		} finally {
+			entityManager.close();
+		}
+
+	}
+	
+	@Override
+	public List<FruitsEntity> findByNameAndLocation(String name, String location) {
+		System.out.println("Running FindByNAmeAndLocation:"+name+location);
+		
+		EntityManager manager=this.EntityManagerFactory.createEntityManager();
+		try {
+		Query query=manager.createNamedQuery("findByNameAndLocation");
+		query.setParameter("fruty", name);
+		query.setParameter("loc", location);
+		System.out.println("Query:"+query);
+		List<FruitsEntity> list=query.getResultList();
+		System.out.println("List found in repo:"+list.size());
+		return list;
+		}finally {
+			manager.close();
+		}
+		
+		
 	}
 
 }

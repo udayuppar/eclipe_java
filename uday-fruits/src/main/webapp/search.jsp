@@ -39,7 +39,7 @@
 		</div>
 	</div>
 </nav></head>
-<body>
+<body  style="background-image: url('https://media.istockphoto.com/id/1294833978/photo/old-wall-texture-cement-dirty-gray-with-black-background-abstract-grey-and-silver-color.jpg?s=612x612&w=0&k=20&c=Gquj3tOmcBuBibWAz7CP8BQOP3F7GuVLF72cyQqCYz8=') ;">
 
 	
 	<h2  style="color:green;">Search the fruits</h2>

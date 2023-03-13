@@ -6,7 +6,8 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 
 
-public class FruitsWebInit extends AbstractAnnotationConfigDispatcherServletInitializer implements WebMvcConfigurer {
+public class FruitsWebInit extends AbstractAnnotationConfigDispatcherServletInitializer 
+implements WebMvcConfigurer {
 	public FruitsWebInit() {
 	System.out.println("Craete:"+this.getClass().getSimpleName());
 	}
@@ -16,6 +17,8 @@ public class FruitsWebInit extends AbstractAnnotationConfigDispatcherServletInit
 		System.out.println("getRootConfigClasses");
 		return null;
 	}
+	
+	
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {

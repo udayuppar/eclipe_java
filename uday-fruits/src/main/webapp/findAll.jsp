@@ -54,11 +54,7 @@
 		<span style="color: red;">${messege }</span>
 	</h3>
 
-	<form action="findByName" method="get">
-
-	Search by Name <input type="text" name="name" /> <input type="submit"
-			value="search" />
-	</form>&nbsp;&nbsp;&nbsp;
+	
 
 	<div>
 	<table class="table table-bordered">

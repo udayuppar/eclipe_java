@@ -26,5 +26,13 @@ public interface FruitsRepository {
 	default List<FruitsEntity> findByLocation(String location) {
 		return Collections.emptyList();
 	}
+	
+	default List<FruitsEntity> findAll() {
+		return Collections.emptyList();
+	}
+	
+	default List<FruitsEntity> findByNameAndLocation(String name,String location) {
+		return Collections.emptyList();
+	}
 
 }

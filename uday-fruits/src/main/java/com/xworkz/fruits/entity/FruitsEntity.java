@@ -3,7 +3,7 @@ package com.xworkz.fruits.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.NamedNativeQuery;
+
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
@@ -16,6 +16,8 @@ import lombok.NoArgsConstructor;
 @Table(name="fruits_table")
 @NamedQuery(name = "findByName", query = "select fruit from FruitsEntity fruit where fruit.name=:fruty ")
 @NamedQuery(name = "findByNameAndMobileNumberAndLocation", query = "select apple from FruitsEntity apple  where apple.location=:loc")
+@NamedQuery(name = "findAll", query = "select fruit from FruitsEntity fruit ")
+@NamedQuery(name = "findByNameAndLocation", query = "select god from FruitsEntity god where god.name=:fruty and god.location=:loc")
 public class FruitsEntity {
 	
 	@Id
